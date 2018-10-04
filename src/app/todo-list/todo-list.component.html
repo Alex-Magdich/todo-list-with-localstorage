@@ -1,0 +1,13 @@
+<div class="wrap">
+    <!-- <p>{{newTodo}}</p> -->
+  <input [(ngModel)]="newTodo" >
+  <button class="add" (click)="addNewTodo()">Add</button>
+
+  <div class="todo" *ngFor="let obj of returnObj; let i = index">
+   {{i+1}}.<a routerLink="/todo/{{obj.name}}">{{obj.name}}</a>
+    <button class="toggle" (click)="toggleDone(i,obj)">Status:{{obj.done ? 'Undone' : 'Done'}}</button>
+    <button class="remove"(click)="removeTodo(i)">remove</button>
+  </div>
+
+  <button class="deleteAll"(click)="removeAllTodo()">DELETE ALL</button>
+</div>
